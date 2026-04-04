@@ -1,0 +1,16 @@
+export const SINS = [
+  'Microwaved fish in the shared kitchen. Twice.',
+  'Replied-all to a company-wide email to say "Thanks!"',
+  'Took the last cup of coffee and did not make more.',
+  'Scheduled a meeting that could have been an email.',
+  'Ate someone else\'s clearly labeled lunch.',
+  'Put in a PTO request for the entire month of December.',
+  'Used "per my last email" with malicious intent.',
+  'Adjusted the thermostat without consulting the committee.',
+  'Brought a speakerphone call into the open office.',
+  'Left passive-aggressive Post-it notes on the communal fridge.',
+  'Clipped their nails at their desk. During a video call.',
+  'Sent a Slack message that just said "Hi" and then waited.',
+  'Heated up leftover broccoli in the microwave at 11:47 AM.',
+  'Took credit for the team\'s work in the all-hands meeting.',
+];

@@ -1,0 +1,56 @@
+.narrator-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 30vh;
+  gap: 24px;
+  max-width: 700px;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+}
+
+.narrator-text {
+  font-size: 22px;
+  line-height: 1.8;
+  color: #e0d6c8;
+  font-style: italic;
+  min-height: 60px;
+  position: relative;
+}
+
+.narrator-cursor {
+  color: #FFD700;
+  animation: blink 0.7s step-end infinite;
+  position: absolute;
+  margin-left: 2px;
+  pointer-events: none;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.narrator-skip,
+.narrator-continue {
+  background: none;
+  border: 1px solid #555;
+  color: #888;
+  padding: 8px 24px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.narrator-skip:hover,
+.narrator-continue:hover {
+  color: #FFD700;
+  border-color: #FFD700;
+}
+
+.narrator-continue {
+  color: #e0d6c8;
+  border-color: #8b6914;
+  font-size: 16px;
+}

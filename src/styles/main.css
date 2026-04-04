@@ -1,0 +1,93 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  color: #e0d6c8;
+  font-family: 'Crimson Text', serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+#game-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Level palette CSS custom properties */
+.level-1 {
+  --bg: #ECEFF1;
+  --primary: #607D8B;
+  --secondary: #B0BEC5;
+  --accent: #FF9800;
+}
+
+.level-2 {
+  --bg: #1B0000;
+  --primary: #D32F2F;
+  --secondary: #FF6F00;
+  --accent: #FFD600;
+}
+
+.level-3 {
+  --bg: #1A0A00;
+  --primary: #FFD700;
+  --secondary: #B71C1C;
+  --accent: #FFFFFF;
+}
+
+.level-4 {
+  --bg: #0D0221;
+  --primary: #311B92;
+  --secondary: #7C4DFF;
+  --accent: #00E5FF;
+}
+
+.level-5 {
+  --bg: #263238;
+  --primary: #455A64;
+  --secondary: #78909C;
+  --accent: #4CAF50;
+}
+
+.level-6 {
+  --bg: #2C2C2C;
+  --primary: #5D4037;
+  --secondary: #9E9E9E;
+  --accent: #FFC107;
+}
+
+.level-7 {
+  --bg: #000000;
+  --primary: #FFD700;
+  --secondary: #FF1744;
+  --accent: #FFFFFF;
+}
+
+/* Font utility classes */
+.font-title {
+  font-family: 'MedievalSharp', cursive;
+}
+
+.font-reveal {
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.font-narrator {
+  font-family: 'Cinzel', serif;
+}
+
+.font-body {
+  font-family: 'Crimson Text', serif;
+}
