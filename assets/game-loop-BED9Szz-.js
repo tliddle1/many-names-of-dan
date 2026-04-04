@@ -1,0 +1,1 @@
+function e(e){let t=!1,n=null,r=0;function i(a){if(!t)return;let o=r?(a-r)/1e3:0;r=a,e(o,a),n=requestAnimationFrame(i)}return{start(){t||(t=!0,r=0,n=requestAnimationFrame(i))},stop(){t=!1,n&&cancelAnimationFrame(n),n=null},get running(){return t}}}export{e as t};
