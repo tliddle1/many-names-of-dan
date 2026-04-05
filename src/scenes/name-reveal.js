@@ -138,7 +138,7 @@ export async function run(container, levelInfo, options = {}) {
 
   // Flavor text via narrator typewriter, or a continue button if no flavor
   if (levelInfo.flavor) {
-    await narrator(flavorContainer, levelInfo.flavor);
+    await narrator(flavorContainer, levelInfo.flavor, { className: 'embedded' });
   } else {
     flavorContainer.style.display = '';
     const continueBtn = document.createElement('button');

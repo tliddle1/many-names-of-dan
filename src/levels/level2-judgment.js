@@ -163,6 +163,7 @@ export async function run(container) {
       card.style.transform = '';
       forgivenBtn.disabled = false;
       castBtn.disabled = false;
+      btnRow.style.visibility = 'visible';
       reaction.textContent = '\u00A0';
       reaction.style.visibility = 'hidden';
 
@@ -170,6 +171,7 @@ export async function run(container) {
         play('whoosh');
         forgivenBtn.disabled = true;
         castBtn.disabled = true;
+        btnRow.style.visibility = 'hidden';
 
         if (type === 'forgiven') {
           card.style.animation = 'fly-left 0.6s ease-in forwards';

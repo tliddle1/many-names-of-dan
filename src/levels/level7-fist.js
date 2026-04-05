@@ -70,7 +70,7 @@ export async function run(container) {
   // Narrator explains the boss before mashing begins
   fistBtn.style.visibility = 'hidden';
   meterWrapper.style.visibility = 'hidden';
-  await narrator(narratorArea, NARRATOR.level7_boss);
+  await narrator(narratorArea, NARRATOR.level7_boss, { className: 'embedded' });
   narratorArea.innerHTML = '';
   fistBtn.style.visibility = 'visible';
   meterWrapper.style.visibility = 'visible';

@@ -1,11 +1,11 @@
 const CREDITS = [
-  { role: 'Directed by', name: 'Dan Lambourne' },
-  { role: 'Produced by', name: 'Dan Lambourne' },
-  { role: 'Catering by', name: 'Dan Lambourne' },
-  { role: 'Emotional Support provided by', name: 'Dan Lambourne' },
-  { role: 'Best Boy Grip', name: 'Dan Lambourne' },
-  { role: 'Key Grip', name: 'Also Dan Lambourne' },
-  { role: 'Spiritual Advisor', name: 'Dan Lambourne' },
+  { role: 'Directed by', name: 'Tip Top Robins' },
+  { role: 'Produced by', name: 'Datt Mamon' },
+  { role: 'Catering by', name: 'Whip Gimble' },
+  { role: 'Emotional Support provided by', name: 'Father Hoot' },
+  { role: 'Best Boy Grip', name: 'Lambo' },
+  { role: 'Key Grip', name: 'Danfast Lamgeee' },
+  { role: 'Spiritual Advisor', name: 'Daryl Wunderlust' },
   { role: 'Dan Lambourne played by', name: 'Dan Lambourne' },
 ];
 

@@ -151,7 +151,7 @@ export async function run(container) {
     resultArea.appendChild(resultText);
 
     // Narrator quip
-    await narrator(resultArea, config.narrator);
+    await narrator(resultArea, config.narrator, { className: 'embedded' });
   }
 
   window.removeEventListener('resize', resizeStars);

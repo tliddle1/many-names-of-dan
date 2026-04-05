@@ -63,8 +63,8 @@ const COSTUMES = {
     shirtColor: '#5d4037',
     headColor: '#e8beac',
     accents: (cx) => [
-      // Crown (drawn above hair)
-      `<polygon points="${cx-10},16 ${cx-6},8 ${cx-2},14 ${cx+2},6 ${cx+6},14 ${cx+10},8 ${cx+14},16" fill="#FFC107"/>`,
+      // Crown (sits on head, hair pokes above/around it)
+      `<polygon points="${cx-12},26 ${cx-8},16 ${cx-4},23 ${cx},12 ${cx+4},23 ${cx+8},16 ${cx+12},26" fill="#FFC107" stroke="#DAA520" stroke-width="0.5"/>`,
       // Belt
       svgRect(cx - 14, 72, 28, 4, '#8b6914'),
       svgRect(cx - 3, 71, 6, 6, '#FFC107', 1),

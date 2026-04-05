@@ -92,6 +92,7 @@ export async function run(container) {
       card.style.opacity = '1';
       approveBtn.disabled = false;
       denyBtn.disabled = false;
+      btnRow.style.visibility = 'visible';
       reaction.textContent = '\u00A0';
       reaction.style.visibility = 'hidden';
 
@@ -99,6 +100,7 @@ export async function run(container) {
         play('stamp');
         approveBtn.disabled = true;
         denyBtn.disabled = true;
+        btnRow.style.visibility = 'hidden';
         reaction.textContent = email.reactions[type];
         reaction.style.visibility = 'visible';
 

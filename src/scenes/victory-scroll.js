@@ -10,7 +10,7 @@ const VICTORY_TEXTS = [
   '"The Fist has spoken. The HR violation is no more. And Dan... rests."',
 ];
 
-const TRANSITION = '\n"But there are those who know him by... another name."';
+const TRANSITION = '\n"There are those who know him by... another name."';
 
 export async function run(container, state, levelIndex) {
   const text = VICTORY_TEXTS[levelIndex] || '"And so it was done."';

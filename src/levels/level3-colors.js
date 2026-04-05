@@ -144,7 +144,7 @@ export async function run(container) {
         score++;
         flyingObjects.push({
           ...currentObject,
-          vy: direction === 'up' ? -400 : 400,
+          vy: direction === 'up' ? -600 : 600,
           life: 1,
         });
       } else {
@@ -225,7 +225,7 @@ export async function run(container) {
       for (let i = flyingObjects.length - 1; i >= 0; i--) {
         const fo = flyingObjects[i];
         fo.y += fo.vy * dt;
-        fo.life -= dt * 3;
+        fo.life -= dt * 1.5;
         ctx.globalAlpha = Math.max(0, fo.life);
         const color = fo.isGold ? '#FFD700' : '#D32F2F';
         drawShapeAt(ctx, fo.shape, fo.x, fo.y, fo.size, color);

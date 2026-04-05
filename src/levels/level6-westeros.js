@@ -100,7 +100,7 @@ export async function run(container) {
     cardArea.innerHTML = '';
     cardArea.appendChild(outcomeArea);
 
-    await narrator(outcomeArea, dispute.options[choice].outcome);
+    await narrator(outcomeArea, dispute.options[choice].outcome, { className: 'embedded' });
   }
 
   container.removeChild(wrapper);

@@ -161,6 +161,8 @@ export async function run(container) {
     let powerTimer = 0;
     let quoteIndex = 0;
     let flashTimeout = null;
+    let currentDir = { dr: 0, dc: 0 }; // current movement direction
+    let nextDir = { dr: 0, dc: 0 };    // buffered input direction
 
     // Enemies
     const enemies = [];
@@ -185,20 +187,22 @@ export async function run(container) {
       });
     }
 
-    // Input
-    const keys = {};
+    // Input — buffer the most recent direction press
     function onKeyDown(e) {
-      if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','W','a','A','s','S','d','D'].includes(e.key)) {
+      const keyMap = {
+        ArrowUp: { dr: -1, dc: 0 }, ArrowDown: { dr: 1, dc: 0 },
+        ArrowLeft: { dr: 0, dc: -1 }, ArrowRight: { dr: 0, dc: 1 },
+        w: { dr: -1, dc: 0 }, W: { dr: -1, dc: 0 },
+        a: { dr: 0, dc: -1 }, A: { dr: 0, dc: -1 },
+        s: { dr: 1, dc: 0 }, S: { dr: 1, dc: 0 },
+        d: { dr: 0, dc: 1 }, D: { dr: 0, dc: 1 },
+      };
+      if (keyMap[e.key]) {
         e.preventDefault();
-        // Normalize WASD to arrow keys
-        const keyMap = { w: 'ArrowUp', W: 'ArrowUp', a: 'ArrowLeft', A: 'ArrowLeft', s: 'ArrowDown', S: 'ArrowDown', d: 'ArrowRight', D: 'ArrowRight' };
-        keys[keyMap[e.key] || e.key] = true;
+        nextDir = keyMap[e.key];
       }
     }
-    function onKeyUp(e) {
-      const keyMap = { w: 'ArrowUp', W: 'ArrowUp', a: 'ArrowLeft', A: 'ArrowLeft', s: 'ArrowDown', S: 'ArrowDown', d: 'ArrowRight', D: 'ArrowRight' };
-      keys[keyMap[e.key] || e.key] = false;
-    }
+    function onKeyUp() {}
 
     function canMove(r, c) {
       if (r < 0 || r >= rows || c < 0 || c >= cols) return false;
@@ -227,16 +231,14 @@ export async function run(container) {
           quoteIndex++;
         }
 
-        // Check for new direction
-        let dr = 0, dc = 0;
-        if (keys['ArrowUp']) dr = -1;
-        else if (keys['ArrowDown']) dr = 1;
-        else if (keys['ArrowLeft']) dc = -1;
-        else if (keys['ArrowRight']) dc = 1;
-
-        if ((dr || dc) && canMove(playerGrid.r + dr, playerGrid.c + dc)) {
-          targetX = (playerGrid.c + dc) * CELL + CELL / 2;
-          targetY = (playerGrid.r + dr) * CELL + CELL / 2;
+        // Try buffered direction first, then continue current direction
+        if ((nextDir.dr || nextDir.dc) && canMove(playerGrid.r + nextDir.dr, playerGrid.c + nextDir.dc)) {
+          currentDir = { ...nextDir };
+          targetX = (playerGrid.c + currentDir.dc) * CELL + CELL / 2;
+          targetY = (playerGrid.r + currentDir.dr) * CELL + CELL / 2;
+        } else if ((currentDir.dr || currentDir.dc) && canMove(playerGrid.r + currentDir.dr, playerGrid.c + currentDir.dc)) {
+          targetX = (playerGrid.c + currentDir.dc) * CELL + CELL / 2;
+          targetY = (playerGrid.r + currentDir.dr) * CELL + CELL / 2;
         }
       } else {
         const dx = targetX - playerX;
