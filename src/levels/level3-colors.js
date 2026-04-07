@@ -117,8 +117,22 @@ export async function run(container) {
     let flyingObjects = [];
     let tutTimeout = null;
 
+    let lastColor = null;
+    let streak = 0;
+
     function spawnObject() {
-      const isGold = Math.random() > 0.5;
+      let isGold;
+      if (streak >= 3) {
+        isGold = !lastColor;
+      } else {
+        isGold = Math.random() > 0.5;
+      }
+      if (isGold === lastColor) {
+        streak++;
+      } else {
+        streak = 1;
+        lastColor = isGold;
+      }
       const shapes = isGold ? GOLD_SHAPES : CRIMSON_SHAPES;
       const shape = shapes[Math.floor(Math.random() * shapes.length)];
       currentObject = {

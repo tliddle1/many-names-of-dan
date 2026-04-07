@@ -1,4 +1,5 @@
 import '../styles/crawl.css';
+import { play, stop } from '../audio/sound-manager.js';
 
 const CRAWL_LINES = [
   'In the land of cubicles and fluorescent light,',
@@ -49,7 +50,7 @@ export async function run(container) {
     // Total height of all lines in world space
     const totalHeight = CRAWL_LINES.length * LINE_SPACING;
     // How far the text needs to scroll before it's all gone past the camera
-    const maxOffset = totalHeight + 600;
+    const maxOffset = totalHeight + 2000;
 
     function resize() {
       canvas.width = wrapper.clientWidth * devicePixelRatio;
@@ -98,7 +99,13 @@ export async function run(container) {
         if (screenY < -50 || screenY > h + 50) continue;
 
         // Fade out as lines approach the vanishing point
-        const alpha = Math.min(1, scale / 0.3);
+        // Staggered fade: far-away lines (small scale) disappear first,
+        // near lines (large scale) disappear later
+        const fadeStart = totalHeight + 1000;
+        const fadeDuration = 200;
+        const lineFadeStart = fadeStart + scale * 600;
+        const globalFade = offset < lineFadeStart ? 1 : Math.max(0, 1 - (offset - lineFadeStart) / fadeDuration);
+        const alpha = Math.min(1, scale / 0.3) * globalFade;
 
         const scaledSize = BASE_FONT_SIZE * scale * devicePixelRatio;
         if (scaledSize < 2) continue;
@@ -134,6 +141,7 @@ export async function run(container) {
     }
 
     requestAnimationFrame(frame);
+    play('intro');
 
     let skippable = false;
 
@@ -150,6 +158,7 @@ export async function run(container) {
     function finish() {
       if (!running || !skippable) return;
       running = false;
+      stop('intro');
       window.removeEventListener('resize', resize);
       document.removeEventListener('keydown', finish);
       wrapper.removeEventListener('click', finish);

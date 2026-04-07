@@ -79,10 +79,16 @@ export async function run(container) {
   wrapper.appendChild(content);
   container.appendChild(wrapper);
 
-  // Resize star canvas
+  // Draw stars once; only redraw if canvas size actually changes
+  let starW = 0, starH = 0;
   function resizeStars() {
-    starCanvas.width = wrapper.clientWidth;
-    starCanvas.height = wrapper.clientHeight;
+    const w = wrapper.clientWidth;
+    const h = wrapper.clientHeight;
+    if (w === starW && h === starH) return;
+    starW = w;
+    starH = h;
+    starCanvas.width = w;
+    starCanvas.height = h;
     drawStars(starCanvas);
   }
   resizeStars();
@@ -132,9 +138,9 @@ export async function run(container) {
     // Animate spin
     const spinObj = { angle: 0 };
     play('wheelSpin');
-    await gsap.to(spinObj, {
+    const spinTween = gsap.to(spinObj, {
       angle: totalRotation,
-      duration: 4.5,
+      duration: 7,
       ease: 'power4.out',
       onUpdate() {
         currentAngle = spinObj.angle;
@@ -142,16 +148,20 @@ export async function run(container) {
       },
     });
 
+    // Show result at 5.25s while wheel is still finishing
+    await new Promise(r => setTimeout(r, 5500));
+
     play('ding');
 
-    // Show result
     const resultText = document.createElement('p');
     resultText.style.cssText = 'font-family:"Cinzel Decorative",serif;font-size:24px;color:#FFD700;text-shadow:0 0 20px rgba(255,215,0,0.5);margin-bottom:8px;';
     resultText.textContent = winSeg.label;
     resultArea.appendChild(resultText);
 
-    // Narrator quip
-    await narrator(resultArea, config.narrator, { className: 'embedded' });
+    // Narrator quip (starts while wheel finishes its last second)
+    const narratorPromise = narrator(resultArea, config.narrator, { className: 'embedded' });
+    await spinTween;
+    await narratorPromise;
   }
 
   window.removeEventListener('resize', resizeStars);
