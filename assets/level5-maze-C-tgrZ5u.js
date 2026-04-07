@@ -1,0 +1,50 @@
+import{t as e}from"./sound-manager-CIe8E3Py.js";import{t}from"./game-loop-BED9Szz-.js";var n=[[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,3,1,0,0,2,1,2,0,0,1,0,2,0,1,0,0,2,0,0,1],[1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,1,0,1,0,1],[1,0,0,0,1,0,0,0,1,0,0,0,1,1,1,0,1,0,1,2,1],[1,0,1,1,1,0,1,1,1,0,1,0,0,0,1,0,1,0,1,0,1],[1,2,0,0,0,0,1,0,0,0,1,1,1,0,0,0,1,0,0,0,1],[1,0,1,0,1,1,1,0,1,1,1,0,0,0,1,1,1,1,1,0,1],[1,0,1,0,0,0,0,0,0,2,0,0,1,0,0,0,0,0,1,0,1],[1,0,1,1,1,0,1,0,1,1,1,0,1,1,1,0,1,0,1,0,1],[1,0,0,0,1,0,1,0,0,0,1,0,0,0,1,0,1,0,0,2,1],[1,1,1,0,1,0,1,1,1,0,1,0,1,0,1,0,1,1,1,0,1],[1,0,0,0,0,0,0,0,1,0,0,0,1,2,0,0,0,0,0,0,1],[1,0,1,1,1,0,1,0,1,0,1,1,1,0,1,0,1,1,1,1,1],[1,0,1,2,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,2,1],[1,0,1,0,1,1,1,1,1,0,1,0,1,1,1,0,1,1,1,0,1],[1,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1],[1,0,1,0,1,0,1,1,1,1,1,0,1,0,1,1,1,0,1,0,1],[1,2,1,0,0,0,1,0,2,0,1,0,0,0,0,0,0,0,1,0,1],[1,0,1,0,1,1,1,0,1,0,1,1,1,1,1,0,1,1,1,0,1],[1,0,0,0,1,0,0,0,1,0,0,0,0,2,0,0,1,0,0,0,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]],r=[`"I'm not mad, I'm just disappointed"`,`"Someone keeps adjusting the thermostat"`,`"Per my PREVIOUS email..."`,`"I don't have a problem with them, BUT—"`,`"As per the policy outlined in section 4.2.1..."`,`"Just wanted to circle back on this"`,`"Let's take this offline"`,`"I'm going to have to escalate this"`,`"That's not really my job"`,`"Well, ACTUALLY..."`,`"I CC'd your manager, just FYI"`,`"Not sure if you saw my last three emails"`,`"Can we schedule a meeting to discuss the meeting?"`,`"I'll just go ahead and do it myself then"`];function i(e){let t=e,n=t/2,r=t/2,i=t*.4,a=`<svg xmlns="http://www.w3.org/2000/svg" width="${t}" height="${t}">
+    <circle cx="${n}" cy="${r}" r="${i}" fill="#e8beac"/>
+    <path d="
+      M${n-i*.875},${r-i*.375}
+      Q${n-i*.75},${r-i*1.125} ${n-i*.25},${r-i*1.25}
+      L${n-i*.125},${r-i*1.5}
+      L${n+i*.0625},${r-i*1.25}
+      L${n+i*.25},${r-i*1.5625}
+      L${n+i*.5},${r-i*1.1875}
+      Q${n+i*.875},${r-i*1.125} ${n+i*.875},${r-i*.375}
+      Q${n+i*.625},${r-i*.5625} ${n},${r-i*.5}
+      Q${n-i*.625},${r-i*.5625} ${n-i*.875},${r-i*.375}
+      Z
+    " fill="#b8a04c"/>
+    <circle cx="${n-i*.3125}" cy="${r-i*.125}" r="${i*.125}" fill="#2c3e50"/>
+    <circle cx="${n+i*.3125}" cy="${r-i*.125}" r="${i*.125}" fill="#2c3e50"/>
+    <path d="M${n-i*.25},${r+i*.3125} Q${n},${r+i*.5625} ${n+i*.25},${r+i*.3125}" fill="none" stroke="#2c3e50" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>`,o=new Image;return o.src=`data:image/svg+xml;charset=utf-8,`+encodeURIComponent(a),o}var a=32,o=3,s=5,c=1.5,l=3;async function u(u){return new Promise(d=>{let f=document.createElement(`div`);f.style.cssText=`
+      position: relative; width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      background: #263238;
+    `;let p=document.createElement(`canvas`),m=n.length,h=n[0].length;p.width=h*a,p.height=m*a,p.style.cssText=`image-rendering: pixelated;max-width:90vw;max-height:80vh;`,f.appendChild(p);let g=document.createElement(`div`);g.style.cssText=`
+      position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 20px; align-items: center; z-index: 2;
+    `;let _=document.createElement(`span`);_.style.cssText=`font-family:"Cinzel",serif;font-size:14px;color:#78909C;`,_.textContent=`MALICIOUSNESS`,g.appendChild(_);let v=document.createElement(`div`);v.style.cssText=`width:200px;height:14px;background:rgba(0,0,0,0.4);border:1px solid #455A64;border-radius:7px;overflow:hidden;position:relative;`;let y=document.createElement(`div`);y.style.cssText=`width:0%;height:100%;background:linear-gradient(to right,#4CAF50,#FF5722,#D32F2F);transition:width 0.3s;border-radius:7px;`,v.appendChild(y);let b=document.createElement(`div`);b.style.cssText=`position:absolute;left:50%;top:-2px;bottom:-2px;width:2px;background:#FFD700;z-index:1;`,v.appendChild(b),g.appendChild(v);let x=document.createElement(`span`);x.style.cssText=`font-family:"Cinzel",serif;font-size:12px;color:#FFD700;opacity:0.6;`,x.textContent=`⚡ 50%`,g.appendChild(x),f.appendChild(g);let S=document.createElement(`div`);S.style.cssText=`
+      position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+      font-family: 'Crimson Text', serif; font-size: 24px; color: #D32F2F;
+      font-style: italic; opacity: 0; transition: opacity 0.3s;
+      text-align: center; max-width: 400px; z-index: 2;
+    `,f.appendChild(S);let C=document.createElement(`div`);C.style.cssText=`
+      position: absolute; inset: 0; z-index: 10;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: rgba(0,0,0,0.85); gap: 24px; padding: 40px;
+    `;let w=document.createElement(`div`);w.style.cssText=`
+      font-family: 'Cinzel', serif; font-size: 28px; color: #D32F2F;
+      text-shadow: 0 0 12px rgba(211,47,47,0.4);
+    `,w.textContent=`Devour the Maliciousness`,C.appendChild(w);let T=document.createElement(`div`);T.style.cssText=`
+      font-family: 'Crimson Text', serif; font-size: 22px; color: #ccc;
+      text-align: center; line-height: 1.8; max-width: 460px;
+    `,T.innerHTML=`
+      Collect the <span style="color:#D32F2F">red orbs</span> to devour the maliciousness.<br>
+      Avoid the <span style="color:#FF8A65">ghosts</span> — they will send you back to the start.<br><br>
+      At <b style="color:#FFD700">50%</b>, you gain the power to consume ghosts.<br><br>
+      Use <b>Arrow Keys</b> to move.
+    `,C.appendChild(T);let E=document.createElement(`button`);E.textContent=`BEGIN`,E.style.cssText=`
+      font-family: 'Cinzel', serif; font-size: 20px; font-weight: 700;
+      padding: 14px 40px; cursor: pointer; letter-spacing: 0.15em;
+      background: #D32F2F; color: #fff; border: none; border-radius: 4px;
+      transition: transform 0.1s; margin-top: 12px;
+    `,E.onmouseenter=()=>{E.style.transform=`scale(1.05)`},E.onmouseleave=()=>{E.style.transform=`scale(1)`},C.appendChild(E),f.appendChild(C),u.appendChild(f);let D=p.getContext(`2d`),O=i(a*2),k=i(a*2.5),A=n.map(e=>[...e]),j=0,M=0,N={r:0,c:0};for(let e=0;e<m;e++)for(let t=0;t<h;t++)A[e][t]===3&&(N={r:e,c:t},A[e][t]=0),A[e][t]===2&&j++;let P={...N},F=N.c*a+a/2,I=N.r*a+a/2,L=F,R=I;a*.35;let z=!1,B=0,V=0,H=null,U={dr:0,dc:0},W={dr:0,dc:0},G=[],K=[{r:5,c:15},{r:15,c:17},{r:17,c:3}];for(let e=0;e<l;e++){let t=K[e]||{r:10,c:10};G.push({r:t.r,c:t.c,x:t.c*a+a/2,y:t.r*a+a/2,tx:t.c*a+a/2,ty:t.r*a+a/2,dir:Math.floor(Math.random()*4),alive:!0,respawnTimer:0,startR:t.r,startC:t.c})}function q(e){let t={ArrowUp:{dr:-1,dc:0},ArrowDown:{dr:1,dc:0},ArrowLeft:{dr:0,dc:-1},ArrowRight:{dr:0,dc:1},w:{dr:-1,dc:0},W:{dr:-1,dc:0},a:{dr:0,dc:-1},A:{dr:0,dc:-1},s:{dr:1,dc:0},S:{dr:1,dc:0},d:{dr:0,dc:1},D:{dr:0,dc:1}};t[e.key]&&(e.preventDefault(),W=t[e.key])}function J(){}function Y(e,t){return!(e<0||e>=m||t<0||t>=h||A[e][t]===1)}function X(){return Math.abs(F-L)<1&&Math.abs(I-R)<1}let Z=t(t=>{if(X())N.c=Math.round((L-a/2)/a),N.r=Math.round((R-a/2)/a),F=L,I=R,A[N.r][N.c]===2&&(A[N.r][N.c]=0,M++,e(`chomp`),Q(r[V%r.length]),V++),(W.dr||W.dc)&&Y(N.r+W.dr,N.c+W.dc)?(U={...W},L=(N.c+U.dc)*a+a/2,R=(N.r+U.dr)*a+a/2):(U.dr||U.dc)&&Y(N.r+U.dr,N.c+U.dc)&&(L=(N.c+U.dc)*a+a/2,R=(N.r+U.dr)*a+a/2);else{let e=L-F,n=R-I,r=o*60*t;F+=Math.sign(e)*Math.min(r,Math.abs(e)),I+=Math.sign(n)*Math.min(r,Math.abs(n))}let n=j>0?M/j*100:0;y.style.width=`${n}%`,!z&&n>=50&&B===0&&(z=!0,B=s,a*.5,e(`powerup`)),z&&(B-=t,B<=0&&(z=!1,B=-1,a*.35));let i=[[0,-1],[0,1],[-1,0],[1,0]];for(let n of G){if(!n.alive){n.respawnTimer-=t,n.respawnTimer<=0&&(n.alive=!0,n.r=n.startR,n.c=n.startC,n.x=n.c*a+a/2,n.y=n.r*a+a/2,n.tx=n.x,n.ty=n.y);continue}let r=n.tx-n.x,o=n.ty-n.y,s=c*60*t;if(Math.abs(r)>1||Math.abs(o)>1)n.x+=Math.sign(r)*Math.min(s,Math.abs(r)),n.y+=Math.sign(o)*Math.min(s,Math.abs(o));else{n.x=n.tx,n.y=n.ty,n.r=Math.round((n.ty-a/2)/a),n.c=Math.round((n.tx-a/2)/a);let[e,t]=i[n.dir],r=n.r+e,o=n.c+t;if(Y(r,o)&&Math.random()>.02)n.tx=o*a+a/2,n.ty=r*a+a/2;else{let e=i.map((e,t)=>t).filter(e=>{let[t,r]=i[e];return Y(n.r+t,n.c+r)});if(e.length){n.dir=e[Math.floor(Math.random()*e.length)];let[t,r]=i[n.dir];n.tx=(n.c+r)*a+a/2,n.ty=(n.r+t)*a+a/2}}}Math.hypot(n.x-F,n.y-I)<a*.6&&(z?(n.alive=!1,n.respawnTimer=4,e(`chomp`)):(N.r=P.r,N.c=P.c,F=P.c*a+a/2,I=P.r*a+a/2,L=F,R=I,e(`buzz`)))}D.clearRect(0,0,p.width,p.height),D.fillStyle=`#1a2327`,D.fillRect(0,0,p.width,p.height);for(let e=0;e<m;e++)for(let t=0;t<h;t++){let n=t*a,r=e*a;if(A[e][t]===1)D.fillStyle=`#455A64`,D.fillRect(n+1,r+1,a-2,a-2),D.strokeStyle=`#546E7A`,D.lineWidth=1,D.strokeRect(n+1,r+1,a-2,a-2);else if(A[e][t]===2){let i=Math.sin(Date.now()/300+e+t)*2;D.fillStyle=`#D32F2F`,D.shadowColor=`#FF5722`,D.shadowBlur=8+i,D.beginPath(),D.arc(n+a/2,r+a/2,5+i*.5,0,Math.PI*2),D.fill(),D.shadowBlur=0}}for(let e of G){if(!e.alive)continue;D.fillStyle=z?`#4FC3F7`:`#FF8A65`,D.strokeStyle=z?`#0288D1`:`#BF360C`,D.lineWidth=2,D.beginPath();let t=e.x,n=e.y,r=a*.35;D.arc(t,n-r*.3,r,Math.PI,0),D.lineTo(t+r,n+r*.5),D.lineTo(t+r*.6,n+r*.2),D.lineTo(t+r*.3,n+r*.5),D.lineTo(t,n+r*.2),D.lineTo(t-r*.3,n+r*.5),D.lineTo(t-r*.6,n+r*.2),D.lineTo(t-r,n+r*.5),D.closePath(),D.fill(),D.stroke(),D.fillStyle=`#fff`,D.beginPath(),D.arc(t-r*.3,n-r*.3,3,0,Math.PI*2),D.arc(t+r*.3,n-r*.3,3,0,Math.PI*2),D.fill()}let l=z?k:O,g=z?a*1:a*.8;z&&(D.shadowColor=`#FFD700`,D.shadowBlur=15),D.drawImage(l,F-g/2,I-g/2,g,g),D.shadowBlur=0,z&&(D.fillStyle=`rgba(255,215,0,0.3)`,D.beginPath(),D.arc(F,I,g/2+4,0,Math.PI*2*(B/s)),D.lineTo(F,I),D.fill()),M>=j&&(Z.stop(),document.removeEventListener(`keydown`,q),document.removeEventListener(`keyup`,J),H&&clearTimeout(H),u.removeChild(f),d())});function Q(e){S.textContent=e,S.style.opacity=`1`,H&&clearTimeout(H),H=setTimeout(()=>{S.style.opacity=`0`},1500)}E.onclick=()=>{f.removeChild(C),document.addEventListener(`keydown`,q),document.addEventListener(`keyup`,J),Z.start()}})}export{u as run};
