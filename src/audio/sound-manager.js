@@ -17,6 +17,8 @@ const sounds = {
   chomp:     new Howl({ src: [`${base}audio/chomp.wav`] }),
   powerup:   new Howl({ src: [`${base}audio/powerup.flac`], volume: 0.3 }),
   punch:     new Howl({ src: [`${base}audio/punch.wav`] }),
+  punch1:    new Howl({ src: [`${base}audio/fist-punch1.wav`] }),
+  punch2:    new Howl({ src: [`${base}audio/fist-punch2.wav`] }),
   slam:      new Howl({ src: [`${base}audio/orchestral-hit.wav`] }),
   reveal:    new Howl({ src: [`${base}audio/reveal.wav`] }),
   intro:     new Howl({ src: [`${base}audio/intro.wav`] }),

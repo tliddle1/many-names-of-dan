@@ -84,7 +84,7 @@ export async function run(container) {
     fistBtn.addEventListener('mousedown', () => {
       if (unleashed) return;
       clicks++;
-      play('punch');
+      play(Math.random() < 0.5 ? 'punch1' : 'punch2');
       const pct = Math.min(clicks / MAX_CLICKS, 1);
       meterFill.style.width = `${pct * 100}%`;
 
