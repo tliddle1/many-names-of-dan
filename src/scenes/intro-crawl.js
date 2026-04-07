@@ -148,7 +148,6 @@ export async function run(container) {
     function enableSkip() {
       skippable = true;
       skipHint.style.visibility = 'visible';
-      document.addEventListener('keydown', finish);
       wrapper.addEventListener('click', finish);
     }
 
@@ -160,7 +159,6 @@ export async function run(container) {
       running = false;
       stop('intro');
       window.removeEventListener('resize', resize);
-      document.removeEventListener('keydown', finish);
       wrapper.removeEventListener('click', finish);
       container.removeChild(wrapper);
       resolve();

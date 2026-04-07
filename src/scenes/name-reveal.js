@@ -50,11 +50,9 @@ export async function run(container, levelInfo, options = {}) {
       function onSkip() { skipped = true; done(); }
       function done() {
         clearTimeout(timer);
-        document.removeEventListener('keydown', onSkip);
         overlay.removeEventListener('click', onSkip);
         resolve();
       }
-      document.addEventListener('keydown', onSkip, { once: true });
       overlay.addEventListener('click', onSkip, { once: true });
     });
   }
@@ -100,10 +98,8 @@ export async function run(container, levelInfo, options = {}) {
         tl.progress(1);
         resolve();
       }
-      document.addEventListener('keydown', onSkip, { once: true });
       overlay.addEventListener('click', onSkip, { once: true });
       tl.then(() => {
-        document.removeEventListener('keydown', onSkip);
         overlay.removeEventListener('click', onSkip);
         resolve();
       });
@@ -124,10 +120,8 @@ export async function run(container, levelInfo, options = {}) {
           subtitleTween.progress(1);
           resolve();
         }
-        document.addEventListener('keydown', onSkip, { once: true });
         overlay.addEventListener('click', onSkip, { once: true });
         subtitleTween.then(() => {
-          document.removeEventListener('keydown', onSkip);
           overlay.removeEventListener('click', onSkip);
           resolve();
         });

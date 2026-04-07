@@ -85,7 +85,6 @@ export async function run(container, text, options = {}) {
     }
 
     function cleanup() {
-      document.removeEventListener('keydown', handleSkip);
       document.removeEventListener('click', handleSkip);
       container.removeChild(wrapper);
     }
@@ -123,7 +122,6 @@ export async function run(container, text, options = {}) {
     // Delay registering skip handlers so a click/key from the previous
     // narrator's continue button doesn't immediately skip this one
     setTimeout(() => {
-      document.addEventListener('keydown', handleSkip);
       document.addEventListener('click', handleSkip);
     }, 100);
 
