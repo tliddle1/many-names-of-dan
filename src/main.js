@@ -21,6 +21,12 @@ async function runGame() {
   const saved = loadState();
   const choice = await titleScreen(container, saved);
 
+  if (choice === 'credits') {
+    const { run: credits } = await import('./scenes/credits.js');
+    await credits(container);
+    return runGame();
+  }
+
   let state;
   let startLevel;
 

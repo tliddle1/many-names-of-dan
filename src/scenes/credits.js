@@ -14,7 +14,7 @@ const FINAL_CARD = '"And there are many other names that have not yet been revea
 export async function run(container) {
   return new Promise((resolve) => {
     const wrapper = document.createElement('div');
-    wrapper.style.cssText = 'position:absolute;inset:0;background:#000;overflow:hidden;cursor:pointer;';
+    wrapper.style.cssText = 'position:absolute;inset:0;background:#000;overflow:hidden;cursor:default;';
 
     const scroll = document.createElement('div');
     scroll.style.cssText = 'position:absolute;bottom:-100%;width:100%;text-align:center;animation:credits-scroll 18s linear forwards;';
@@ -38,10 +38,10 @@ export async function run(container) {
 
     wrapper.appendChild(scroll);
 
-    const skipHint = document.createElement('div');
-    skipHint.style.cssText = 'position:absolute;bottom:20px;right:20px;color:#555;font-size:13px;font-family:"Crimson Text",serif;z-index:3;';
-    skipHint.textContent = 'Click to skip';
-    wrapper.appendChild(skipHint);
+    const skipBtn = document.createElement('button');
+    skipBtn.textContent = 'Skip';
+    skipBtn.style.cssText = 'position:absolute;bottom:20px;right:20px;color:#555;font-size:13px;font-family:"Crimson Text",serif;z-index:3;background:none;border:1px solid #333;padding:4px 12px;cursor:pointer;';
+    wrapper.appendChild(skipBtn);
 
     // Inject keyframes
     const style = document.createElement('style');
@@ -56,13 +56,11 @@ export async function run(container) {
     container.appendChild(wrapper);
 
     function finish() {
-      document.removeEventListener('keydown', finish);
       container.removeChild(wrapper);
       resolve();
     }
 
     scroll.addEventListener('animationend', finish);
-    wrapper.addEventListener('click', finish);
-    document.addEventListener('keydown', finish);
+    skipBtn.addEventListener('click', finish);
   });
 }

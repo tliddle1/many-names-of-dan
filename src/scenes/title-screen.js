@@ -23,6 +23,12 @@ export async function run(container, savedState) {
       wrapper.appendChild(contBtn);
     }
 
+    const creditsBtn = document.createElement('button');
+    creditsBtn.textContent = 'Credits';
+    creditsBtn.style.cssText = 'font-family:"Cinzel",serif;font-size:20px;padding:12px 32px;cursor:pointer;background:#222;color:#e0d6c8;border:2px solid #8b6914;';
+    creditsBtn.onclick = () => { container.removeChild(wrapper); resolve('credits'); };
+    wrapper.appendChild(creditsBtn);
+
     container.appendChild(wrapper);
   });
 }
