@@ -1,5 +1,5 @@
 import '../styles/crawl.css';
-import { play, stop } from '../audio/sound-manager.js';
+import { play, stop, isMuted, onUnmute } from '../audio/sound-manager.js';
 
 const CRAWL_LINES = [
   'In the land of cubicles and fluorescent light,',
@@ -143,6 +143,11 @@ export async function run(container) {
     requestAnimationFrame(frame);
     play('intro');
 
+    // If muted at start, play intro sound when user unmutes mid-crawl
+    const removeUnmuteListener = onUnmute(() => {
+      if (running) play('intro');
+    });
+
     let skippable = false;
 
     function enableSkip() {
@@ -158,6 +163,7 @@ export async function run(container) {
       if (!running || !skippable) return;
       running = false;
       stop('intro');
+      removeUnmuteListener();
       window.removeEventListener('resize', resize);
       skipBtn.removeEventListener('click', finish);
       container.removeChild(wrapper);

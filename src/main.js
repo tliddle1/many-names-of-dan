@@ -2,6 +2,7 @@ import './styles/main.css';
 import './styles/levels.css';
 import { createState, loadState, saveState, clearState } from './state.js';
 import { NARRATOR } from './data/narrator-text.js';
+import { createSoundToggle, compactMode } from './ui/sound-toggle.js';
 
 const container = document.getElementById('game-container');
 
@@ -16,10 +17,15 @@ const LEVEL_NAMES = [
 ];
 
 async function runGame() {
+  // Sound toggle — prominent on title screen, compact during gameplay
+  createSoundToggle();
+
   // Title screen
   const { run: titleScreen } = await import('./scenes/title-screen.js');
   const saved = loadState();
   const choice = await titleScreen(container, saved);
+
+  compactMode();
 
   if (choice === 'credits') {
     const { run: credits } = await import('./scenes/credits.js');

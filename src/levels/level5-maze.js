@@ -113,7 +113,7 @@ export async function run(container) {
     introBody.innerHTML = `
       Collect the <span style="color:#D32F2F">red orbs</span> to devour the maliciousness.<br>
       Avoid the <span style="color:#FF8A65">ghosts</span> — they will send you back to the start.<br><br>
-      At <b style="color:#FFD700">50%</b>, you gain the power to consume ghosts.<br><br>
+      At <b style="color:#FFD700">50%</b>, you temporarily gain the power to consume ghosts.<br><br>
       Use <b>Arrow Keys</b> to move.
     `;
     introOverlay.appendChild(introBody);

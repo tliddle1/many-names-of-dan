@@ -2,6 +2,12 @@ import { Howl } from 'howler';
 
 const base = import.meta.env.BASE_URL;
 
+const STORAGE_KEY = 'dan-sound-muted';
+
+// Muted by default — only unmuted if the user has explicitly opted in before
+const stored = localStorage.getItem(STORAGE_KEY);
+let muted = stored === null ? true : stored === 'true';
+
 const sounds = {
   stamp:     new Howl({ src: [`${base}audio/rubber-stamp.wav`] }),
   whoosh:    new Howl({ src: [`${base}audio/whoosh.wav`] }),
@@ -17,8 +23,31 @@ const sounds = {
 };
 
 export function play(soundName) {
+  if (muted) return;
   const sound = sounds[soundName];
   if (sound) sound.play();
+}
+
+export function isMuted() {
+  return muted;
+}
+
+const unmuteListeners = new Set();
+
+export function toggleMute() {
+  muted = !muted;
+  localStorage.setItem(STORAGE_KEY, String(muted));
+  if (muted) {
+    stopAll();
+  } else {
+    for (const fn of unmuteListeners) fn();
+  }
+  return muted;
+}
+
+export function onUnmute(fn) {
+  unmuteListeners.add(fn);
+  return () => unmuteListeners.delete(fn);
 }
 
 export function stop(soundName) {
