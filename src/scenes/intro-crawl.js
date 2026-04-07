@@ -35,11 +35,11 @@ export async function run(container) {
     const canvas = document.createElement('canvas');
     wrapper.appendChild(canvas);
 
-    const skipHint = document.createElement('div');
-    skipHint.className = 'crawl-skip';
-    skipHint.textContent = 'Press any key or click to skip';
-    skipHint.style.visibility = 'hidden';
-    wrapper.appendChild(skipHint);
+    const skipBtn = document.createElement('button');
+    skipBtn.className = 'crawl-skip';
+    skipBtn.textContent = 'Skip';
+    skipBtn.style.cssText = 'position:absolute;bottom:20px;right:20px;color:#555;font-size:13px;font-family:"Crimson Text",serif;z-index:3;background:none;border:1px solid #333;padding:4px 12px;cursor:pointer;visibility:hidden;';
+    wrapper.appendChild(skipBtn);
 
     container.appendChild(wrapper);
 
@@ -147,8 +147,8 @@ export async function run(container) {
 
     function enableSkip() {
       skippable = true;
-      skipHint.style.visibility = 'visible';
-      wrapper.addEventListener('click', finish);
+      skipBtn.style.visibility = 'visible';
+      skipBtn.addEventListener('click', finish);
     }
 
     // Enable skipping after 2 seconds (text should be visible by then)
@@ -159,7 +159,7 @@ export async function run(container) {
       running = false;
       stop('intro');
       window.removeEventListener('resize', resize);
-      wrapper.removeEventListener('click', finish);
+      skipBtn.removeEventListener('click', finish);
       container.removeChild(wrapper);
       resolve();
     }
