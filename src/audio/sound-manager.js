@@ -20,7 +20,7 @@ const sounds = {
   punch1:    new Howl({ src: [`${base}audio/fist-punch1.wav`] }),
   punch2:    new Howl({ src: [`${base}audio/fist-punch2.wav`] }),
   slam:      new Howl({ src: [`${base}audio/orchestral-hit.wav`] }),
-  reveal:    new Howl({ src: [`${base}audio/reveal.wav`] }),
+  reveal:    new Howl({ src: [`${base}audio/fanfare.wav`] }),
   intro:     new Howl({ src: [`${base}audio/intro.wav`] }),
 };
 
