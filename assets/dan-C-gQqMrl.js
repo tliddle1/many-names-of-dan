@@ -1,4 +1,4 @@
-import{a as e,i as t}from"./shapes-CG0hL56V.js";var n=`#b8a04c`;function r(e){return`<g>
+import{a as e,i as t}from"./shapes-DyW1ToKl.js";var n=`#b8a04c`;function r(e){return`<g>
     <path d="
       M${e-14},32
       Q${e-12},20 ${e-4},18
